@@ -30,7 +30,7 @@ echo "Giriş Başarısız!";
 $uyebilgi = mysqli_fetch_assoc($sor); 
 
 
-
+$_SESSION['user_id']=$uyebilgi['user_id'];
 $_SESSION['isim'] =$uyebilgi['user_name'];
 echo "<script>location.href='index.php';</script>";
 
