@@ -122,6 +122,7 @@ include("onodemeli.html");
           echo $urun;
         }
        }
+       $_SESSION['toplampara']=number_format($toplam_para, 2, ',', '.');
     ?>
        </tbody>
 						</table>
@@ -132,7 +133,7 @@ include("onodemeli.html");
 
         <div >
         <div class="form-check form-switch" style="margin-left:33%;">
-        <p>Toplam : <?php echo number_format($toplam_para, 2, ',', '.'); ?> TL</p>
+        <p>Toplam : <?php  echo number_format($toplam_para, 2, ',', '.'); ?> TL</p>
   <input class="form-check-input" type="checkbox" role="switch" id="onbilgi">
   <label class="form-check-label" for="flexSwitchCheckDefault">
 Ön Bilgilendirme Koşulları'nı ve Mesafeli Satış Sözleşmesi'ni okudum, onaylıyorum.</label>
