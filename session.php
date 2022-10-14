@@ -8,7 +8,7 @@ include("db.php");
 $kuladi = $_POST['mail'];
 
 $parola = $_POST['pass'];
-$_SESSION['isim']=$_POST['mail'];
+//$_SESSION['isim']=$_POST['mail'];
  
 
 if($kuladi == "" || $parola == "") {
@@ -31,10 +31,10 @@ $uyebilgi = mysqli_fetch_assoc($sor);
 
 
 
-$_SESSION['kuladi'] =$uyebilgi['user_name'];
+$_SESSION['isim'] =$uyebilgi['user_name'];
 echo "<script>location.href='index.php';</script>";
 
 
-//emiraksoylşk
+
 }}
 ?>

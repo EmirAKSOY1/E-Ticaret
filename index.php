@@ -23,15 +23,16 @@
 }
 </style>
 
-
-</head>
-<body>
-
-  <?php 
-      include("navbar.html")
+<?php 
+session_start();
+      include("navbar.php");
       
       
   ?>
+</head>
+<body>
+
+  
 
 <div class="row row-cols-1 row-cols-md-4 g-3" style="margin-left:2%">
 

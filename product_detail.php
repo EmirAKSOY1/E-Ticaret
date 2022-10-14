@@ -11,7 +11,7 @@
     
     
     $row = $result->fetch_assoc();
-    if($row !=''){
+    
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +34,7 @@
 <body>
   
 <?php
-include('navbar.html');
+include('navbar.php');
 ?>
 <main class="container" >
 
@@ -79,7 +79,7 @@ include('navbar.html');
   
     <span id="ucret"><?php echo $row['product_price']?></span>
     <span >TL</span>
-    <button type="button"  class="cart-btn" style="border-width:0px;" >SEPETE EKLE</button>
+    <button type="button"  class="cart-btn" style="border-width:0px;" >SEPET EKLE</button>
     
   </div>
 </div>
@@ -91,48 +91,35 @@ include('navbar.html');
 
 
 $(".cart-btn").click(function(){
-    <?php 
+   <?php
+
     if(isset($_SESSION['isim'])){
-    echo "
-    <script>
+      echo "
     
-        $.ajax({
-            type: 'POST',
-            url: 'sepetekle.php',
-            data: {id: ".$productId."  },
-            success: function(data){
-               
-             console.log(data);
-            },
-            error: function(xhr, status, error){
-            console.error(xhr,error);
-            }
-           });
-    </script>
-    "  ;
-          }
-   
-    ?>
-
-       
-  
-       
- 
-
-
-
-
-
- 
-  
-});
-</>
-</body>
-</html>
-<?php
+      $.ajax({
+        type: 'POST',
+        url: 'sepetekle.php',
+        data: {id: ".$productId."  },
+        success: function(data){
+           
+         console.log(data);
+        },
+        error: function(xhr, status, error){
+        console.error(xhr,error);
+        }
+       });
+    
+      ";
     }
     else{
-        header('Location:404.html');
-        
+      echo "location.href='login.php';";
     }
-?>
+
+  
+    
+    
+  ?> 
+});
+</script>
+</body>
+</html>
