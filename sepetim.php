@@ -1,7 +1,7 @@
 <?php 
 session_start();
 $user=$_SESSION['user_id'];
-
+include("onodemeli.html");
 
 
 ?>
@@ -33,7 +33,7 @@ $user=$_SESSION['user_id'];
     <section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
+				<div class="col-md-1 text-center mb-5">
 					<h2 class="heading-section">Sepetim</h2>
                     
 				</div>
@@ -44,7 +44,7 @@ $user=$_SESSION['user_id'];
 				<div class="col-md-12">
                 <br>
             <br>
-            <br>
+            
 					<div class="table-wrap">
 						<table class="table table-responsive-xl">
 						  <thead>
@@ -59,10 +59,7 @@ $user=$_SESSION['user_id'];
 						  <tbody>
                           
    
-    <br>
-    <br>
-    <br>
-    <br>
+    
     <?php  
       include("db.php"); 
       $sec= "SELECT * FROM sepet where user_id='$user'";
@@ -129,12 +126,49 @@ $user=$_SESSION['user_id'];
 				</div>
 			</div>
 		</div>
-	</section>
 
-
-
+        <div >
+        <div class="form-check form-switch" style="margin-left:33%;">
+  <input class="form-check-input" type="checkbox" role="switch" id="onbilgi">
+  <label class="form-check-label" for="flexSwitchCheckDefault">
+Ön Bilgilendirme Koşulları'nı ve Mesafeli Satış Sözleşmesi'ni okudum, onaylıyorum.</label>
+</div><br>
+<button type="button" class="btn btn-success" style="margin-left:46%;" id="tamamla">Alışverişi Tamamla</button>
+    </div>
+</section>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
- 
+<script>
+    $('#onbilgi').change(function () {   
+                if ($("#onbilgi").is(':checked')) {
+
+                    $('#KursiyerSartnameModal').modal('show');
+
+                }
+            });
+    
+            $('#tamamla').click(function () {   
+                
+
+                   if ($("#onbilgi").is(':checked')) {
+
+                    lo
+
+                }
+                else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oppss....',
+                        text: 'Lütfen Sözleşmeyi Kabul Ediniz!',
+                        confirmButtonText: 'Tamam'
+                        })
+}
+                
+
+                
+            });
+            
+</script>
 </body>
 </html>
