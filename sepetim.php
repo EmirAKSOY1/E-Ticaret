@@ -16,7 +16,9 @@ $user=$_SESSION['user_id'];
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/detail.css">
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="../css/tablestyle.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Sepetim</title>
@@ -26,30 +28,108 @@ $user=$_SESSION['user_id'];
     <?php 
     include ("navbar.php");
 
-    include("db.php");
+    
+    ?>
+    <section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Sepetim</h2>
+                    
+				</div>
+			</div>
+          
+			<div class="row">
+                
+				<div class="col-md-12">
+                <br>
+            <br>
+            <br>
+					<div class="table-wrap">
+						<table class="table table-responsive-xl">
+						  <thead>
+						    <tr>
+						    	<th>Sıra</th>
+						    	<th>Ürün</th>
+						      <th>Adı</th>
+						      <th>Miktar</th>
+						      <th>Fiyat</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+                          
+   
+    <br>
+    <br>
+    <br>
+    <br>
+    <?php  
+      include("db.php"); 
       $sec= "SELECT * FROM sepet where user_id='$user'";
       
       $sonuc= $baglan->query($sec);
       
       if ($sonuc->num_rows > 0) 
       {
+        $sayac=0;
         // verileri listeleyebiliriz
         while($cek = $sonuc->fetch_assoc()) 
          {
-          $urun=
-          "
-          <p>".$cek['id']."</p>
-          <p>".$cek['urun_id']."</p>
-          <p>".$cek['add_date']."</p>
-          <p>".$cek['user_id']."</p>
-          
-          ";
+            
+            $urunid=$cek['urun_id'];
+            $securun= "SELECT * FROM product where product_id='$urunid'";
+      
+      $sonucurun= $baglan->query($securun);
+      
+      if ($sonucurun->num_rows > 0) 
+      {
+        
+       
+        // verileri listeleyebiliriz
+        while($cekurun = $sonucurun->fetch_assoc()) 
+         {
+            $sayac+=1;
+            $urun="<tr class='alert' role='alert'>
+            <td>
+            ".$sayac."
+            </td>
+          <td class='d-flex align-items-center'>
+              <div class='img' style='background-image: url(".$cekurun['product_image'].");'></div>
+              
+          </td>
+          <td>".$cekurun['product_name']."</td>
+        <td style='text-overflow: ellipsis;' >".$cek['piece']."</td>
+          <td>
+              
+            <span aria-hidden='true'>".$cekurun['product_price']." "." TL"."</span>
+          </button>
+        </td>
+        </tr>";
+            
+         }
+        
+        }
+
+
+
+
+
+
+
+         
 
 
           echo $urun;
         }
        }
     ?>
+       </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
 

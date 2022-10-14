@@ -5,7 +5,7 @@ $user=$_SESSION['user_id'];
 include("db.php");
 
 
-    $sql = "INSERT INTO sepet(urun_id , user_id ) VALUES ('$urun','$user')";
+    $sql = "INSERT INTO sepet(urun_id , user_id , piece ) VALUES ('$urun','$user','1')";
     
     if ($baglan->query($sql) === TRUE) {
         echo "Record updated successfully";

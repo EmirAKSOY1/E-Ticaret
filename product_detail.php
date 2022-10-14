@@ -94,7 +94,7 @@ function success(){
           title: 'Başarılı',
           confirmButtonText: 'Alışverişe Devam Et',
           text: 'Ürün Başarıyla Sepete Eklendi',
-          footer: '<a href="">Sepete Git</a>'
+          footer: '<a href="sepetim.php">Sepete Git</a>'
         })
 }
 
