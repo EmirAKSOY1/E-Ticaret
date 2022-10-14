@@ -153,7 +153,7 @@ include("onodemeli.html");
 
                    if ($("#onbilgi").is(':checked')) {
 
-                    lo
+                    
 
                 }
                 else{
