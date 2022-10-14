@@ -58,7 +58,7 @@ include("db.php");
             <div class='card-body'>
               <h5 class='card-title'>".$cek['product_name']."</h5>
               <p class='card-text'>".$cek['product_detail']."</p>
-              <h3 class='card-price' >".$cek['product_price']." TL</h3>
+              <h3 class='card-price' >".number_format($cek['product_price'], 2, ',', '.')." TL</h3>
             </div>
             
           </div>

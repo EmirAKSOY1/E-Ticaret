@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="shop.png" type="image/x-icon" />
 <?php 
 session_start();
 $user=$_SESSION['user_id'];
@@ -11,7 +12,7 @@ include("onodemeli.html");
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="shop.png" type="image/x-icon" />
+    
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/navbar.css">
@@ -69,6 +70,7 @@ include("onodemeli.html");
       if ($sonuc->num_rows > 0) 
       {
         $sayac=0;
+        $toplam_para=0;
         // verileri listeleyebiliriz
         while($cek = $sonuc->fetch_assoc()) 
          {
@@ -86,6 +88,7 @@ include("onodemeli.html");
         while($cekurun = $sonucurun->fetch_assoc()) 
          {
             $sayac+=1;
+            $toplam_para+=$cekurun['product_price'];
             $urun="<tr class='alert' role='alert'>
             <td>
             ".$sayac."
@@ -98,7 +101,7 @@ include("onodemeli.html");
         <td style='text-overflow: ellipsis;' >".$cek['piece']."</td>
           <td>
               
-            <span aria-hidden='true'>".$cekurun['product_price']." "." TL"."</span>
+            <span aria-hidden='true'>".number_format($cekurun['product_price'], 2, ',', '.')." "." TL"."</span>
           </button>
         </td>
         </tr>";
@@ -129,6 +132,7 @@ include("onodemeli.html");
 
         <div >
         <div class="form-check form-switch" style="margin-left:33%;">
+        <p>Toplam : <?php echo number_format($toplam_para, 2, ',', '.'); ?> TL</p>
   <input class="form-check-input" type="checkbox" role="switch" id="onbilgi">
   <label class="form-check-label" for="flexSwitchCheckDefault">
 Ön Bilgilendirme Koşulları'nı ve Mesafeli Satış Sözleşmesi'ni okudum, onaylıyorum.</label>
@@ -153,7 +157,7 @@ include("onodemeli.html");
 
                    if ($("#onbilgi").is(':checked')) {
 
-                    
+                    location.href='login.php';
 
                 }
                 else{

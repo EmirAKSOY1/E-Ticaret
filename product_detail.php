@@ -77,7 +77,7 @@ include('navbar.php');
   <!-- Product Pricing -->
   <div class="product-price">
   
-    <span id="ucret"><?php echo $row['product_price']?></span>
+    <span id="ucret"><?php echo number_format($row['product_price'], 2, ',', '.')?></span>
     <span >TL</span>
     <button type="button"  class="cart-btn" style="border-width:0px;" >SEPETE EKLE</button>
     
