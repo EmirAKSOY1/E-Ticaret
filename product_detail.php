@@ -88,7 +88,15 @@ include('navbar.php');
 
 
 <script>
-
+function success(){
+  Swal.fire({
+          icon: 'success',
+          title: 'Başarılı',
+          confirmButtonText: 'Alışverişe Devam Et',
+          text: 'Ürün Başarıyla Sepete Eklendi',
+          footer: '<a href="">Sepete Git</a>'
+        })
+}
 
 $(".cart-btn").click(function(){
    <?php
@@ -103,6 +111,7 @@ $(".cart-btn").click(function(){
         success: function(data){
            
          console.log(data);
+         success();
         },
         error: function(xhr, status, error){
         console.error(xhr,error);
