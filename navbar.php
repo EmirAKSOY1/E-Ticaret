@@ -30,7 +30,22 @@
                             <?php 
 
                             if(isset($_SESSION['isim'])){
-                                echo "<li class='nav-item'><a href='logout.php' class='nav-link'>".$_SESSION['isim']." , Çıkış Yap</a></li>";
+                                echo "<li class='nav-item' style='margin-top:2%;'>
+                                <div class='btn-group'>
+                                <button type='button' class='btn btn-info dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>
+                                ".$_SESSION['isim']."
+                                </button>
+                                <ul class='dropdown-menu'>
+                                  <li><a class='dropdown-item' href='#'>Siparişlerim</a></li>
+                                  <li><a class='dropdown-item' href='#'>Sepetim</a></li>
+                                  <li><a class='dropdown-item' href='#'>Bilgilerim</a></li>
+                                  <li><hr class='dropdown-divider'></li>
+                                  <li><a class='dropdown-item' href='logout.php'>Çıkış Yap</a></li>
+                                </ul>
+                              </div>
+                              </li>
+                                ";
+                               // echo "<li class='nav-item'><a href='logout.php' class='nav-link'>".$_SESSION['isim']." , Çıkış Yap</a></li>";
                             }
                             else{
                                 echo "<li class='nav-item'><a href='login.php' class='nav-link'>Giriş</a></li>";

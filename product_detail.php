@@ -79,7 +79,7 @@ include('navbar.php');
   
     <span id="ucret"><?php echo $row['product_price']?></span>
     <span >TL</span>
-    <button type="button"  class="cart-btn" style="border-width:0px;" >SEPET EKLE</button>
+    <button type="button"  class="cart-btn" style="border-width:0px;" >SEPETE EKLE</button>
     
   </div>
 </div>
