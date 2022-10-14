@@ -37,7 +37,7 @@
                                 </button>
                                 <ul class='dropdown-menu'>
                                   <li><a class='dropdown-item' href='#'>Siparişlerim</a></li>
-                                  <li><a class='dropdown-item' href='#'>Sepetim</a></li>
+                                  <li><a class='dropdown-item' href='sepetim.php'>Sepetim</a></li>
                                   <li><a class='dropdown-item' href='#'>Bilgilerim</a></li>
                                   <li><hr class='dropdown-divider'></li>
                                   <li><a class='dropdown-item' href='logout.php'>Çıkış Yap</a></li>
