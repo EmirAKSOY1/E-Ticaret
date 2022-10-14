@@ -35,6 +35,6 @@ $_SESSION['kuladi'] =$uyebilgi['user_name'];
 echo "<script>location.href='index.php';</script>";
 
 
-//emiraksoy
+//emiraksoylşk
 }}
 ?>
