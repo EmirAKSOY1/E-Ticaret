@@ -157,7 +157,7 @@ include("onodemeli.html");
 
                    if ($("#onbilgi").is(':checked')) {
 
-                    location.href='login.php';
+                    location.href='adressec.php';
 
                 }
                 else{
