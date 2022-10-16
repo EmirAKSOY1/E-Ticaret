@@ -111,6 +111,6 @@ $("#kaydet").click(function(){
   
 });
 </script>
-kşkkş
+
 </body>
 </html>
