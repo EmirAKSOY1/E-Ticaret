@@ -55,6 +55,7 @@ include("onodemeli.html");
 						      <th>Adı</th>
 						      <th>Miktar</th>
 						      <th>Fiyat</th>
+						      <th></th>
 						    </tr>
 						  </thead>
 						  <tbody>
@@ -103,6 +104,9 @@ include("onodemeli.html");
               
             <span aria-hidden='true'>".number_format($cekurun['product_price'], 2, ',', '.')." "." TL"."</span>
           </button>
+        </td>
+        <td>
+          <button type='button' class='btn btn-danger'>Sepetten Çıkart</button>
         </td>
         </tr>";
             
