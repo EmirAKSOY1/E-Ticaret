@@ -106,7 +106,7 @@ include("onodemeli.html");
           </button>
         </td>
         <td>
-          <button type='button' class='btn btn-danger'>Sepetten Çıkart</button>
+          <button type='button' class='btn btn-danger' id='urun_'>Sepetten Çıkart</button>
         </td>
         </tr>";
             
@@ -177,6 +177,11 @@ include("onodemeli.html");
 
                 
             });
+            $(".cart-btn").click(function(){
+
+              alert("Sildim");
+            });
+
             
 </script>
 </body>
