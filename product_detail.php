@@ -22,7 +22,7 @@
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    
     <link rel="stylesheet" href="css/detail.css">
     
 
@@ -30,11 +30,12 @@
     <title><?php echo $row['product_name']?></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/newnavbar.css">
 </head>
 <body>
   
 <?php
-include('navbar.php');
+include('newnavbar.php');
 ?>
 <main class="container" >
 

@@ -15,19 +15,26 @@ include("onodemeli.html");
     
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    
     <link rel="stylesheet" href="css/detail.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 	
 	<link rel="stylesheet" href="../css/tablestyle.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Sepetim</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/newnavbar.css">
+    <style>
+    .ftco-section{
+      padding-top:0rem;
+      padding-bottom:0rem;
+    }
+    </style>
 </head>
 <body>
     <?php 
-    include ("navbar.php");
+    include ("newnavbar.php");
 
     
     ?>
@@ -106,7 +113,7 @@ include("onodemeli.html");
           </button>
         </td>
         <td>
-          <button type='button' class='btn btn-danger' id='urun_'>Sepetten Çıkart</button>
+          <button type='button' class='btn btn-danger' id='". $cek['id']." 'name='urun_sil'>Sepetten Çıkart</button>
         </td>
         </tr>";
             
@@ -177,9 +184,23 @@ include("onodemeli.html");
 
                 
             });
-            $(".cart-btn").click(function(){
-
-              alert("Sildim");
+            $('[name="urun_sil"]').click(function(){
+              id=$(this).attr('id');
+              console.log(id);
+              $.ajax({
+        type: 'POST',
+        url: 'sepetten_sil.php',
+        data: {id: id  },
+        success: function(data){
+          location.reload();
+         console.log(data);
+         
+        },
+        error: function(xhr, status, error){
+        console.error(xhr,error);
+        }
+       });
+             
             });
 
             

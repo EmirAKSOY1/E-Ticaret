@@ -1,4 +1,19 @@
+<style>
 
+.li-item li{
+  list-style-type: none;/*listelerin başındaki daireleri kaldırır*/
+  display: block;
+}
+.li-item{
+    display: none;/*normalde görüntüyü engelle*/
+    position: absolute;/*ne bilmiyom ama önemli*/
+}
+.nav-item:hover .li-item li a{
+    display:block;
+}
+</style>
+    
+    
     <section class="ftco-section" style="margin-top: -100px;">
 
         <div class="container">
@@ -24,8 +39,10 @@
                     <div class="collapse navbar-collapse" id="ftco-nav">
                         <ul class="navbar-nav ml-auto mr-md-3">
                             <li class="nav-item active"><a href="index.php" class="nav-link">Anasayfa</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Kategoriler</a></li>
-
+                            <li class="nav-item" id="kategori"><a href="#" class="nav-link">Kategoriler</a></li>
+                                <ul class="li-item">
+                                    <li ><a>asd</a></li>
+                                </ul>
                             <li class="nav-item"><a href="#" class="nav-link">Yardım ve Destek</a></li>
                             <?php 
 

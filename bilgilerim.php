@@ -6,80 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bilgilerim</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    
+    
     <link rel="stylesheet" href="css/style.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <style>
-    body{
-        margin-top:20px;
-        color: #1a202c;
-        text-align: left;
-        background-color: #e2e8f0;    
-    }
-    .main-body {
-        padding: 15px;
-    }
-    .card {
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
-    }
     
-    .card {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        border: 0 solid rgba(0,0,0,.125);
-        border-radius: .25rem;
-    }
-    
-    .card-body {
-        flex: 1 1 auto;
-        min-height: 1px;
-        padding: 1rem;
-    }
-    
-    .gutters-sm {
-        margin-right: -8px;
-        margin-left: -8px;
-    }
-    
-    .gutters-sm>.col, .gutters-sm>[class*=col-] {
-        padding-right: 8px;
-        padding-left: 8px;
-    }
-    .mb-3, .my-3 {
-        margin-bottom: 1rem!important;
-    }
-    
-    .bg-gray-300 {
-        background-color: #e2e8f0;
-    }
-    .h-100 {
-        height: 100%!important;
-    }
-    .shadow-none {
-        box-shadow: none!important;
-    }
-    </style>
-
+     <link rel="stylesheet" href="css/newnavbar.css">
+     <link rel="stylesheet" href="css/bilgilerim.css">
+   
+   
 </head>
 <body>
     <?php 
         session_start();
         $user=$_SESSION['user_id'];
-        include("navbar.php");
+        
         include("db.php");
+        
         $sor = mysqli_query($baglan,"SELECT * FROM user where user_id='$user' ");
 
         $uyebilgi = mysqli_fetch_assoc($sor); 
-        
+        include("newnavbar.php");
     ?>
 
 <div class="container">
@@ -106,20 +55,20 @@
                   
                 </div>
                 <div class="col-md-8">
-                  <div class="card mb-3">
+                  <div class="card mb-3" id="bilgiler">
                     <div class="card-body">
                       <div class="row">
                         <div class="col-sm-3">
                           <h6 class="mb-0">İsim</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                        <?php echo $uyebilgi['tel']?>
+                        <?php echo $uyebilgi['user_name']?>
                         </div>
                       </div>
                       <hr>
                       <div class="row">
                         <div class="col-sm-3">
-                          <h6 class="mb-0">Soyisim</h6>
+                          <h6 class="mb-0">Adres</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
                         <?php echo $uyebilgi['adress']?>
@@ -140,22 +89,14 @@
                           <h6 class="mb-0">Mail</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                        <?php echo $uyebilgi['tel']?>
+                        <?php echo $uyebilgi['user_mail']?>
                         </div>
                       </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Görev</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        <?php echo $uyebilgi['tel']?>
-                        </div>
-                      </div>
+                     
                       <hr>
                       <div class="row">
                         <div class="col-sm-12">
-                        <a href="dashboard.php" class="btn btn-success" role="button" aria-pressed="true">Geri Dön</a>
+                        
                         
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Düzenle</button>
                         
@@ -173,6 +114,13 @@
     
             </div>
         </div>
-    
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/main.js"></script>  
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+
 </body>
 </html>

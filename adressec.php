@@ -9,7 +9,7 @@
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/newnavbar.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -17,7 +17,7 @@
     <?php 
         session_start();
         $user=$_SESSION['user_id'];
-        include("navbar.php");
+        include("newnavbar.php");
         include("db.php");
         $sor = mysqli_query($baglan,"SELECT * FROM user where user_id='$user' ");
 
@@ -67,10 +67,10 @@ $("#tamamla").click(function(){
             var radioValue = $("input[name='adres']:checked").val();
             if(radioValue=='a'){
                 $('#exampleModal').modal('show');
-                alert("adres değişiklik  ekranı");
+                
             }
             else{
-                alert(<?php echo $_SESSION['toplampara'] ?> );
+                location.href='odemeekran.php';
             }
         });
 
