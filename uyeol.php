@@ -114,7 +114,7 @@
 		  	},
               submitHandler: function(form) {
 
-  
+				//asdf
                 //form.submit();
                 $.ajax({
         type: 'POST',
