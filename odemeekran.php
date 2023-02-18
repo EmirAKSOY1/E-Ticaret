@@ -18,7 +18,7 @@ $kullanici_zaman="2015-10-05 12:43:35";
 $kullanici_adresiyaz="Adres";
 $kullanici_il="İstanbul";
 $siparis_no=356;
-$sepettoplam=100;
+$sepettoplam=1000;
 
 ?>
 

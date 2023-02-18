@@ -15,7 +15,7 @@
       
       <div class="container">
         <div class="row">
-          <div class="col-md-4 pr-md-5">
+          <div class="col-md-4 pr-md-5" id='left-side'>
             <a href="#" class="footer-site-logo d-block mb-4">3AK</a>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quasi perferendis ratione perspiciatis accusantium.</p>
           </div>

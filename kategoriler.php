@@ -15,6 +15,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/newnavbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
 <style>
 .card-img-top
 {
@@ -157,7 +160,11 @@ include("db.php");
 
 <span id='urun_adet'>
 <?php 
-echo $urun_adeti
+echo $urun_adeti;
+
+
+
+
 ?> Adet ürün bulundu
 </span>
 
@@ -168,6 +175,9 @@ echo $urun_adeti
   <script src="js/main.js"></script>  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <?php 
+include("footer.php");
+?>
 </body>
 </html>

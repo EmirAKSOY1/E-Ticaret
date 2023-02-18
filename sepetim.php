@@ -18,6 +18,7 @@ include("onodemeli.html");
     
     <link rel="stylesheet" href="css/detail.css">
     
+    
 	
 	<link rel="stylesheet" href="../css/tablestyle.css">
 
@@ -25,6 +26,8 @@ include("onodemeli.html");
     <title>Sepetim</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/newnavbar.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/footer.css">
     <style>
     .ftco-section{
       padding-top:0rem;
@@ -152,6 +155,7 @@ include("onodemeli.html");
 <button type="button" class="btn btn-success" style="margin-left:46%;" id="tamamla">Alışverişi Tamamla</button>
     </div>
 </section>
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
@@ -205,5 +209,6 @@ include("onodemeli.html");
 
             
 </script>
+
 </body>
 </html>
