@@ -9,9 +9,13 @@
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/newnavbar.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/adressec.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 <body>
     <?php 
@@ -23,19 +27,7 @@
 
         $uyebilgi = mysqli_fetch_assoc($sor); 
     ?>
-    <div class="form-check">
-  <input class="form-check-input" type="radio" name="adres" id="flexRadioDefault1" value="a">
-  <label class="form-check-label" for="flexRadioDefault1">
-    Başka Adres
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="adres" id="flexRadioDefault2" checked value="b">
-  <label class="form-check-label" for="flexRadioDefault2">
-    <?php echo $uyebilgi['adress']   ?>
-  </label>
-</div>
-<button type="button" class="btn btn-success" style="margin-left:46%;" id="tamamla">Devam Et</button>
+
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -61,6 +53,34 @@
     </div>
   </div>
 </div>
+
+
+<div class="form-wrapper">
+	<h2>Adres Seç</h2>
+	<div class='ea'>
+	
+		<label for="choice-1">
+			<input type="radio" id="choice-1" name="adres" value="b" />
+			<div>
+      <?php echo $uyebilgi['adress']   ?>
+				<span>Are you sure?</span>
+			</div>
+		</label>
+		
+		<label for="choice-2">
+			<input type="radio" id="choice-2" name="adres" value="a" />
+			<div>
+      Başka Adres
+				<span>Good point.</span>
+			</div>
+		</label>
+		
+</div>
+		<button type="submit" id="tamamla">Kaydet</button>
+	
+</div> 
+
+
 
 <script>
 $("#tamamla").click(function(){
