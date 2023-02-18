@@ -69,7 +69,7 @@ include('newnavbar.php');
 
 
       
-    <span><?php echo $row['category_id']?> </span><br>
+    
     <span>Son : <?php echo $row['product_stock']?> Adet</span>
     
     

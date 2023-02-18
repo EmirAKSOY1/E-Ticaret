@@ -22,9 +22,9 @@
 			<div class="form-left">
 				<img src="images/register.jpg" alt="form">
 				<p class="text-1">Üye Ol</p>
-				<p class="text-2">Üyelik Koşulları</p>
+				
 			</div>
-			<form class="form-detail" action="#" method="post" id="myform">
+			<form class="form-detail" action="yeniuye.php" method="post" id="myform">
 				<div class="form-row">
 					<label for="username">Kullanıcı Adı</label>
 					<input type="text" name="username" id="username" class="input-text">
@@ -40,6 +40,11 @@
 				</div>
 
 				<div class="form-row">
+					<label for="adres">Telefon</label>
+					<input type="tel" name="tel" id="tel" class="input-text" >
+				</div>
+
+				<div class="form-row">
 					<label for="password">Şifre</label>
 					<input type="password" name="password" id="password" class="input-text" required>
 				</div>
@@ -52,9 +57,7 @@
 					<p>veya<a href="login.php">Giriş yap</a></p>
 				</div>
                 <br>
-                <small>
-                    Kaydı Tamamla diyerek şartları kabul ettiğimi onaylıyorum
-                </small>
+
 			</form>
 		</div>
 	</div>
@@ -79,6 +82,10 @@
 			    your_email: {
 			      	required: true,
 			      	email: true
+			    },
+				tel: {
+			      	required: true,
+			      	number: true
 			    },
                 adres: {
 			      	required: true
@@ -113,22 +120,35 @@
 		    	}
 		  	},
               submitHandler: function(form) {
+				form.submit();
+				
 
-				//asdf
-                //form.submit();
-                $.ajax({
-        type: 'POST',
-        url: 'yeniuye.php',
-        data: {username:"emir"  },
-        success: function(data){
-            Swal.fire('Bilgilerin');
+	// 			var adres =$("#adres" ).val();
+	// 			var sifre =$("#password").val();
+	// 			var mail =$("#your_email").val();
+	// 			var username =$("#username").val();
+			    
+				
+
+
+
+
+			
+	// 			$.ajax({
+    //     type: 'POST',
+    //     url: 'yeniuye.php',
+    //     data: {name: username,adres:adres,mail:mail,sifre:sifre },
+    //     success: function(data){
+           
+			
+			
          
-         
-        },
-        error: function(xhr, status, error){
-        console.error(xhr,error);
-        }
-       });
+    //     },
+    //     error: function(xhr, status, error){
+    //     console.error(xhr,error);
+    //     }
+    //    });
+    
 
 }
       			

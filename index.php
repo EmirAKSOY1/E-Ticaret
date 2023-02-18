@@ -11,10 +11,14 @@
     <!--Navbar-->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="css/navbar.css"> -->
+    
     
     
 
+    <!--Footer -->
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    
 
     <link rel="stylesheet" href="css/style.css">
     <!---->
@@ -172,7 +176,9 @@ echo $urun_adeti
 ?> Adet ürün bulundu
 </span>
 
-
+<?php 
+include("footer.php");
+?>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>
